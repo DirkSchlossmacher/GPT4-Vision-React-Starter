@@ -3,6 +3,7 @@ import './App.css';
 
 function App() {
   const [file, setFile] = useState(null);
+  const [prompt, setPrompt] = useState('What’s in this image');
   const [preview, setPreview] = useState('');
   const [result, setResult] = useState('');
   const [statusMessage, setStatusMessage] = useState('');
@@ -40,7 +41,7 @@ function App() {
             "content": [
               {
                 "type": "text",
-                "text": "What’s in this image?"
+                "text": "${prompt}"
               },
               {
                 "type": "image_url",
@@ -112,6 +113,10 @@ function App() {
   return (
     <div className="App">
       <h1>OpenAI Image Analysis</h1>
+        <div className="prompt">
+          <strong>Analysis prompt:</strong>
+          <textarea value={prompt} readOnly />
+        </div>
       <div 
         className={`drop-area ${dragOver ? 'drag-over' : ''}`}
         onDrop={handleDrop}
