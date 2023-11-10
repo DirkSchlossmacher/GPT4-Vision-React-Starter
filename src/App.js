@@ -113,10 +113,10 @@ function App() {
   return (
     <div className="App">
       <h1>OpenAI Image Analysis</h1>
-        <div className="prompt">
-          <strong>Analysis prompt:</strong>
-          <textarea value={prompt} readOnly />
-        </div>
+      <div className="result">
+        <strong>Analysis prompt:</strong>
+        <textarea value={prompt}  />
+      </div>
       <div 
         className={`drop-area ${dragOver ? 'drag-over' : ''}`}
         onDrop={handleDrop}
